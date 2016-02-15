@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sqldexter.gcmnetworking">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Bidding"
+            android:label="@string/title_activity_bidding"
+            android:theme="@style/AppTheme"></activity>
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.sqldexter.gcmnetworking" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".MyGcmListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".MyInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <receiver android:name=".AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.sqldexter.gcmnetworking.AlarmReceiver" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name=".GCMRegIntentService"
+            android:exported="false"></service>
+
+        <activity
+            android:name=".BookedActivity"
+            android:label="@string/title_activity_booked"
+            android:parentActivityName=".Bidding"
+            android:theme="@style/AppTheme">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sqldexter.gcmnetworking.Bidding" />
+        </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="88e8b6e7f5fd95699729966e898a6eb04d4aae8e" />
+    </application>
+
+</manifest>
