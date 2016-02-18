@@ -99,6 +99,7 @@ public class Bidding extends AppCompatActivity implements View.OnClickListener {
                 TextView tv=new TextView(getBaseContext());
                 tv.setText(truck.getTruck_number());
                 tv.setTextColor(Color.BLACK);
+                tv.setPadding(8,0,0,0);
                 ll.addView(tv);
             }
             textViewprefRoute.setText(apiDataObject.getRoute_start()+" to "+apiDataObject.getRoute_end());

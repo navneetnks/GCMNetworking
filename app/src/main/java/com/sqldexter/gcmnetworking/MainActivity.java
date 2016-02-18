@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegBroadcastReceiver,
+                new IntentFilter(LocalPreferences.REGISTRATION_COMPLETE));
+        Log.d(TAG,"Registered mRegBroadcastReceiver");
         if (checkPlayServices()) {
             // Start IntentService to register this application with GCM.
             Intent intent = new Intent(this, GCMRegIntentService.class);
@@ -104,9 +107,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-        LocalBroadcastManager.getInstance(this).registerReceiver(mRegBroadcastReceiver,
-                new IntentFilter(LocalPreferences.REGISTRATION_COMPLETE));
-        Log.d(TAG,"Registered mRegBroadcastReceiver");
     }
     @Override
     protected void onPause() {

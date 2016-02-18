@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.sqldexter.gcmnetworking.Bidding">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <RelativeLayout
         android:id="@+id/rl"
         android:layout_width="match_parent"
@@ -14,151 +16,213 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
-
-        <TextView
-            android:id="@+id/lblpostId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Post ID" />
-
-        <TextView
-            android:id="@+id/textViewPostId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@id/lblpostId" />
-
-        <TextView
-            android:id="@+id/lblPickupDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lblpostId"
-            android:text="Pickup Date" />
-
-        <TextView
-            android:id="@+id/textViewPickupDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewPostId"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@id/lblPickupDate" />
-
         <LinearLayout
+            android:id="@+id/lla"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lblPickupDate"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp">
+
+
+            <TextView
+                android:id="@+id/lblpostId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Post ID" />
+
+            <TextView
+                android:id="@+id/textViewPostId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="3"
+
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lla"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/lblPickupDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Pickup Date" />
+
+            <TextView
+                android:id="@+id/textViewPickupDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="3"
+
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/llVehicle1"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llb"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp">
 
             <TextView
                 android:id="@+id/lblVehicleNumber"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="Vehicle Number" />
 
             <LinearLayout
                 android:id="@+id/llVehicle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:orientation="vertical"
 
                 >
 
             </LinearLayout>
         </LinearLayout>
-        <TextView
-            android:id="@+id/lblprefRoute"
+
+        <LinearLayout
+            android:id="@+id/llc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llVehicle1"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/lblprefRoute"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Preferred Route"
+
+                />
+
+            <TextView
+                android:id="@+id/textViewprefRoute"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="3"
+
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lld"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llc"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/lblLowestValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Lowest Market Vehicle Rate"
+
+                />
+
+            <TextView
+                android:id="@+id/textViewLowestRate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="8dp"
+                android:layout_weight="3"
+
+
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lld"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/lblHighestRate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Highest Market Vehicle Rate"
+
+                />
+
+            <TextView
+                android:id="@+id/textViewHighestRate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="8dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lle"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lblBid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="2"
+                android:text="Your Rate per Ton" />
+
+            <TextView
+                android:id="@+id/textViewBid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginLeft="8dp"
+                android:layout_weight="3"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Preferred Route"
-            android:layout_below="@id/llVehicle1"
-            />
-        <TextView
-            android:id="@+id/textViewprefRoute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_below="@id/llf"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="64dp"
+            android:text="Update" />
 
 
-            android:layout_toRightOf="@id/lblprefRoute"
-            android:layout_below="@id/llVehicle1"
-            android:layout_marginLeft="16dp"
-            />
-        <TextView
-        android:id="@+id/lblLowestValue"
+        </RelativeLayout>
+    </ScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="Lowest Market Vehicle Rate"
-        android:layout_below="@id/lblprefRoute"
-        />
-        <TextView
-            android:id="@+id/textViewLowestRate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_toRightOf="@id/lblLowestValue"
-            android:layout_below="@id/lblprefRoute"
-            android:layout_marginLeft="16dp"
-            />
-        <TextView
-            android:id="@+id/lblHighestRate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="Highest Market Vehicle Rate"
-            android:layout_below="@id/lblLowestValue"
-            />
-        <TextView
-            android:id="@+id/textViewHighestRate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_toRightOf="@id/lblHighestRate"
-            android:layout_below="@id/textViewLowestRate"
-            android:layout_marginLeft="16dp"
-            />
-        <TextView
-            android:id="@+id/lblBid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="Your Rate per Ton"
-            android:layout_below="@id/lblHighestRate"
-            />
-        <TextView
-            android:id="@+id/textViewBid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:layout_toRightOf="@id/lblBid"
-            android:layout_below="@id/textViewHighestRate"
-            android:layout_marginLeft="16dp"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewHighestRate"
-
-            android:layout_marginTop="64dp"
-            android:id="@+id/buttonUpdate"
-            android:text="Update"
-            android:layout_centerHorizontal="true"/>
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="@dimen/fab_margin"
-            android:src="@android:drawable/ic_menu_compass" />
-    </RelativeLayout>
-
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_menu_compass" />
     <ProgressBar
         android:id="@+id/networkProgressBar"
         android:layout_width="wrap_content"
