@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
         LocalBroadcastManager.getInstance(this).registerReceiver(mRegBroadcastReceiver,
                 new IntentFilter(LocalPreferences.REGISTRATION_COMPLETE));
+        Log.d(TAG,"Registered mRegBroadcastReceiver");
     }
     @Override
     protected void onPause() {

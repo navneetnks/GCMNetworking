@@ -1,28 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context="com.sqldexter.gcmnetworking.Bidding">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/apiDataTextView"/>
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-    <ProgressBar
+
+        <TextView
+            android:id="@+id/lblpostId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/networkProgressBar"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"/>
-    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
-    android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="@dimen/fab_margin"
-    android:src="@android:drawable/ic_menu_compass" />
+            android:text="Post ID" />
 
+        <TextView
+            android:id="@+id/textViewPostId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/lblpostId" />
+
+        <TextView
+            android:id="@+id/lblPickupDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblpostId"
+            android:text="Pickup Date" />
+
+        <TextView
+            android:id="@+id/textViewPickupDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewPostId"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/lblPickupDate" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblPickupDate"
+            android:id="@+id/llVehicle1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lblVehicleNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Vehicle Number" />
+
+            <LinearLayout
+                android:id="@+id/llVehicle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+
+                >
+
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/lblprefRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Preferred Route"
+            android:layout_below="@id/llVehicle1"
+            />
+        <TextView
+            android:id="@+id/textViewprefRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_toRightOf="@id/lblprefRoute"
+            android:layout_below="@id/llVehicle1"
+            android:layout_marginLeft="16dp"
+            />
+        <TextView
+        android:id="@+id/lblLowestValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Lowest Market Vehicle Rate"
+        android:layout_below="@id/lblprefRoute"
+        />
+        <TextView
+            android:id="@+id/textViewLowestRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_toRightOf="@id/lblLowestValue"
+            android:layout_below="@id/lblprefRoute"
+            android:layout_marginLeft="16dp"
+            />
+        <TextView
+            android:id="@+id/lblHighestRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Highest Market Vehicle Rate"
+            android:layout_below="@id/lblLowestValue"
+            />
+        <TextView
+            android:id="@+id/textViewHighestRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_toRightOf="@id/lblHighestRate"
+            android:layout_below="@id/textViewLowestRate"
+            android:layout_marginLeft="16dp"
+            />
+        <TextView
+            android:id="@+id/lblBid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Your Rate per Ton"
+            android:layout_below="@id/lblHighestRate"
+            />
+        <TextView
+            android:id="@+id/textViewBid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_toRightOf="@id/lblBid"
+            android:layout_below="@id/textViewHighestRate"
+            android:layout_marginLeft="16dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewHighestRate"
+
+            android:layout_marginTop="64dp"
+            android:id="@+id/buttonUpdate"
+            android:text="Update"
+            android:layout_centerHorizontal="true"/>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@android:drawable/ic_menu_compass" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/networkProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
 </RelativeLayout>

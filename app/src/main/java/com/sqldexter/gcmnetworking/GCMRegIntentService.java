@@ -53,7 +53,9 @@ public class GCMRegIntentService extends IntentService {
         // Notify UI that registration has completed, so the progress indicator can be hidden.
         Intent registrationComplete = new Intent(LocalPreferences.REGISTRATION_COMPLETE);
         registrationComplete.putExtra("token",token);
+        Log.d(TAG, "Registration is completed");
         LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
+        Log.d(TAG, "broadcast sent");
     }
 
 //    sending registration token at App-servers.

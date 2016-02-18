@@ -18,7 +18,7 @@ public class BookedActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booked);
 //        getActionBar().setDisplayHomeAsUpEnabled(true);
-        callToButton=(Button)findViewById(R.id.callToButton);
+        callToButton=(Button)findViewById(R.id.callToButton1);
         contactNum="+919555628797";
         callToButton.setText("Call "+contactNum);
         callToButton.setOnClickListener(this);
@@ -28,7 +28,7 @@ public class BookedActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
 
-        if(v.getId()==R.id.callToButton) {
+        if(v.getId()==R.id.callToButton1) {
             HelperUtility.makeCall(this, contactNum);
             Log.d(TAG,"clicked on callToTextView");
         }
